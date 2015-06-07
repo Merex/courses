@@ -19,7 +19,7 @@ class ProcCourse extends CI_Controller {
 		$description = $this->input->post('c_desc');
 		
 		$this->load->model('Course');
-
+		//TODO: validate input
 		$course= $this->Course->add_course($course,$description);
 		redirect("/");
 		//$this->load->view('course_display');
@@ -34,7 +34,7 @@ class ProcCourse extends CI_Controller {
 		$this->load->view('del_course', array('courses' => $course));
 	}
 
-	public function deletecourse($id){//TODO: load model to del
+	public function deletecourse($id){
 		$this->load->model('Course');
 		$course=$this->Course->delete_course($id);
 		redirect("/");

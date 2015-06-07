@@ -6,7 +6,6 @@ $id = $this->session->userdata('id');
 <head>
 	<meta charset="utf-8">
 	<title>Delete Confirmation</title>
-
 	<style type="text/css">
 
 	::selection { background-color: #E13300; color: white; }
@@ -98,26 +97,12 @@ $id = $this->session->userdata('id');
 	 $courses['description'];
 ?>	</p>
 
-
 	<form action="confirm/<?= $id?>">
 	<button type="submit" value="delete">Yes</button>
 	</form>
 <form action="/">
 	<button type="submit" value="decline">No</button>
 </form>
-	<!-- <form method="post" action="localhost/courses/add">
-		<label>Name: <input type="text" size="50" name="c_name"></label><br>
-		<label>Description: <textarea cols="40" rows="5" name="c_desc"></textarea></label>
-		<button type="submit" value="Submit">Submit</button>
-	</form>
-	<form method="post" action="localhost/courses/destroy/3">
-		<button type="submit" value="Delete">Test Delete</button>
-	</form> -->
-	<div id="body">
-
-	</div>
-
 </div>
-
 </body>
 </html>

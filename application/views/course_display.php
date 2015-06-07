@@ -1,11 +1,14 @@
 <?php
+/*TODO: Change from session var to array passed through parameter, 
+error handling:Make sure that when the form is submitted, it does NOT allow you to add a course without a course name. Make sure the course name is at least 15 characters. You can make the course description optional.
+Have the most recently added course appear on the top
+*/
 defined('BASEPATH') OR exit('No direct script access allowed');
 ?><!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="utf-8">
 	<title>Welcome to Course Scheduler</title>
-
 	<style type="text/css">
 
 	::selection { background-color: #E13300; color: white; }
@@ -88,7 +91,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <body>
 
 <div id="container">
-
 	<h1>Add a new Course</h1>
 	<form method="post" action="localhost/courses/add">
 		<label>Name: <input type="text" size="50" name="c_name"></label><br>
@@ -96,6 +98,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<button type="submit" value="Submit">Submit</button>
 	</form>
 	<div id="body">
+		<?= $this->session->flashdata('errors') ?>
 		<table>
 		<tr>
 			<th>Course Name</th>
@@ -107,20 +110,16 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	?><tr><td style="background-color:darkgrey"><?php
 			echo $entry['name'];
 			$id = $entry['id'];
-			?></td><td style="background-color:lightgrey"><?php
- 			echo $entry['description'];
-			?></td><td style="background-color:lightgrey"><?php
-			echo $entry['date_added'];
+			?></td><td style="background-color:lightgrey"><?=
+ 			$entry['description'];
+			?></td><td style="background-color:lightgrey"><?=
+			$entry['date_added'];
 			?></td><td style="background-color:grey">
-			<a href="<?= "localhost/courses/destroy/$id" ?>">Delete</a><?php
- 			
-?></td></tr><?php }
+			<a href="<?= "localhost/courses/destroy/$id" ?>">Delete</a> 			
+</td></tr><?php }
 ?>
-
 		</table>
 	</div>
-
 </div>
-
 </body>
 </html>

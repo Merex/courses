@@ -9,6 +9,12 @@ class Course extends CI_Model {
          return $this->db->query("SELECT * FROM courses WHERE id = ?", array($course_id))->row_array();
      }
 
+     function validate_course($id){
+        $this->load->library('form_validation');
+        //todo: add validation rules
+
+     }
+
      function add_course($course,$description)
      {
          $query = "INSERT INTO Courses (name, description, date_added) VALUES (?,?,?)";
@@ -18,9 +24,7 @@ class Course extends CI_Model {
 
      function delete_course($id){
         $query = "DELETE FROM courses WHERE id = $id";
-        //$values = array($id);
-        return $this->db->query($query);
-        //return $this->db->query("DELETE FROM Courses WHERE id = ?", array($id))->row_array();  
+        return $this->db->query($query);  
      }
 }
 ?>
