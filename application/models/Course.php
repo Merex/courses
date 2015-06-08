@@ -2,7 +2,7 @@
 class Course extends CI_Model {
      function get_all_courses()
      {
-         return $this->db->query("SELECT * FROM courses")->result_array();
+         return $this->db->query("SELECT * FROM courses ORDER BY date_added DESC")->result_array();
      }
      function get_course_by_id($course_id)
      {   
@@ -11,8 +11,13 @@ class Course extends CI_Model {
 
      function validate_course($id){
         $this->load->library('form_validation');
-        //todo: add validation rules
+        $this->form_validation->set_rules('c_name', "Course Name", 'required|trim|alpha_numeric|min_length[15]');
 
+        if($this->form_validation->run()===FALSE){
+            return FALSE;
+        }
+        else
+            return TRUE;
      }
 
      function add_course($course,$description)

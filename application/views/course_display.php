@@ -65,6 +65,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		margin: 10px;
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
+		padding: 15px;
 	}
 
 	textarea{
@@ -73,18 +74,25 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 	table{
 	border: 1px black solid;
+	margin-top:20px;
 	}
-
-	td{
-
-	}
-
 	tr{
 	outline: 1px black;
 	outline-style: ridge;
 	}
 	th, td {
     padding: 15px;
+}
+button{
+font-size: 15pt;
+width: 270px;
+margin-top: 20px;
+height: 50px;
+vertical-align: top;
+}
+
+span{
+	margin-right:30px;
 }
 	</style>
 </head>
@@ -93,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <div id="container">
 	<h1>Add a new Course</h1>
 	<form method="post" action="localhost/courses/add">
-		<label>Name: <input type="text" size="50" name="c_name"></label><br>
+		<label><span>Name:</span> <input type="text" size="57" name="c_name"></label><br>
 		<label>Description: <textarea cols="40" rows="5" name="c_desc"></textarea></label>
 		<button type="submit" value="Submit">Submit</button>
 	</form>

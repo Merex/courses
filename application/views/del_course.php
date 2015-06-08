@@ -48,7 +48,6 @@ $id = $this->session->userdata('id');
 	#body {
 		margin: 0 15px 0 15px;
 	}
-
 	p.footer {
 		text-align: right;
 		font-size: 11px;
@@ -57,31 +56,29 @@ $id = $this->session->userdata('id');
 		padding: 0 10px 0 10px;
 		margin: 20px 0 0 0;
 	}
-
 	#container {
 		margin: 10px;
 		border: 1px solid #D0D0D0;
 		box-shadow: 0 0 8px #D0D0D0;
 	}
-
 	textarea{
 		resize:none;
 	}
-
 	table{
 	border: 1px black solid;
 	}
-
-	td{
-
-	}
-
 	tr{
 	outline: 1px black;
 	outline-style: ridge;
 	}
 	th, td {
     padding: 15px;
+}
+button{
+font-size: 15pt;
+width: 270px;
+margin-top: 20px;
+height: 50px;
 }
 	</style>
 </head>
